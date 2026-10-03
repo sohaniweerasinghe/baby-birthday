@@ -1,0 +1,2815 @@
+/* ==================================================
+   BASIC RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   BODY
+================================================== */
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background: #160b12;
+
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   ALL SCREENS
+================================================== */
+
+.screen {
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    transition: opacity 1s ease;
+}
+
+
+/* ==================================================
+   NORMAL CONTENT
+================================================== */
+
+.content {
+    width: 100%;
+
+    max-width: 700px;
+
+    animation: fadeIn 1.5s ease;
+}
+
+
+/* ==================================================
+   SMALL TEXT
+================================================== */
+
+.small-text {
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    opacity: 0.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==================================================
+   HEADINGS
+================================================== */
+
+h1 {
+    font-size: 60px;
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   NORMAL MESSAGE
+================================================== */
+
+.message {
+    font-size: 21px;
+
+    line-height: 1.6;
+
+    opacity: 0.85;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+button {
+    padding: 15px 35px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    color: #160b12;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+
+/* ==================================================
+   HIDDEN ELEMENTS
+================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==================================================
+   GENERAL FADE
+================================================== */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==================================================
+   ENVELOPE SCREEN
+================================================== */
+
+#envelopeScreen {
+    position: relative;
+}
+
+
+/* Keep paragraph above the envelope */
+
+#envelopeScreen .content {
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* Give paragraph a little more breathing room */
+
+#envelopeScreen .message {
+    margin-bottom: 45px;
+}
+
+
+/* ==================================================
+   ENVELOPE SECTION
+================================================== */
+
+.envelope-container {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 55px;
+
+    margin-bottom: 80px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ==================================================
+   ENVELOPE
+================================================== */
+
+.envelope {
+    position: relative;
+
+    width: 280px;
+
+    height: 180px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+
+    z-index: 2;
+}
+
+
+.envelope:hover {
+    transform: scale(1.05);
+}
+
+
+/* ==================================================
+   ENVELOPE BODY
+================================================== */
+
+.envelope-back {
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: #ffffff;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+
+    z-index: 1;
+}
+
+
+/* ==================================================
+   LETTER INSIDE ENVELOPE
+================================================== */
+
+.envelope-letter {
+    position: absolute;
+
+    width: 85%;
+
+    height: 80%;
+
+    left: 7.5%;
+
+    bottom: 0;
+
+    background: #f8f5f2;
+
+    color: #160b12;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 35px;
+
+    border-radius: 3px;
+
+    transition:
+        transform 0.8s ease;
+
+    z-index: 2;
+}
+
+
+/* ==================================================
+   ENVELOPE FLAP
+================================================== */
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 140px solid transparent;
+
+    border-right: 140px solid transparent;
+
+    border-top: 100px solid #eeeeee;
+
+    z-index: 3;
+
+    transform-origin: top;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+/* ==================================================
+   OPEN TEXT
+================================================== */
+
+.open-text {
+    margin-top: 25px;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.7;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* ==================================================
+   OPEN ENVELOPE
+================================================== */
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+
+.envelope.open .envelope-letter {
+    transform: translateY(-90px);
+}
+
+
+/* ==================================================
+   LETTER BUTTON
+================================================== */
+
+.letter-button {
+    margin-top: 30px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* ==================================================
+   BIRTHDAY LETTER SCREEN
+================================================== */
+
+#letterScreen {
+
+    min-height: 100vh;
+
+    height: 100vh;
+
+    align-items: flex-start;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #3a1726,
+            #160b12 65%
+        );
+}
+
+
+/* ==================================================
+   LETTER CONTENT
+================================================== */
+
+.letter-content {
+
+    width: 100%;
+
+    max-width: 800px;
+
+    padding:
+        60px 20px 80px;
+
+    margin: 0 auto;
+
+    animation:
+        letterAppear 1.5s ease;
+}
+
+
+/* ==================================================
+   LETTER HEADING
+================================================== */
+
+.letter-content h1 {
+
+    font-size: 52px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==================================================
+   GLASS LETTER
+================================================== */
+
+.real-letter {
+
+    width: 100%;
+
+    margin-top: 35px;
+
+    padding: 45px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 18px;
+
+    text-align: left;
+
+    line-height: 1.9;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.45);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+.real-letter p {
+
+    margin-bottom: 22px;
+}
+
+
+/* ==================================================
+   SIGNATURE
+================================================== */
+
+.signature {
+
+    text-align: right;
+
+    font-style: italic;
+
+    margin-top: 35px;
+}
+
+
+/* ==================================================
+   THERE'S MORE BUTTON
+================================================== */
+
+#memoriesButton {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==================================================
+   LETTER ANIMATION
+================================================== */
+
+@keyframes letterAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.97);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* ==================================================
+   STORY INTRO SCREEN
+================================================== */
+
+#storyIntroScreen {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #3a1726,
+            #160b12 70%
+        );
+}
+
+
+/* ==================================================
+   OUR STORY / TIMELINE
+================================================== */
+
+#ourStoryScreen {
+
+    min-height: 100vh;
+
+    height: 100vh;
+
+    align-items: flex-start;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #321522,
+            #160b12 70%
+        );
+}
+
+
+.story-content {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding:
+        70px 25px 100px;
+
+    animation:
+        storyAppear 1.3s ease;
+}
+
+
+.story-content > h1 {
+
+    margin-bottom: 15px;
+}
+
+
+.story-intro {
+
+    max-width: 600px;
+
+    margin:
+        0 auto 70px;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    opacity: 0.75;
+}
+
+
+/* ==================================================
+   TIMELINE
+================================================== */
+
+.timeline {
+
+    position: relative;
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    padding-bottom: 40px;
+}
+
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    transform:
+        translateX(-50%);
+}
+
+
+.timeline-item {
+
+    position: relative;
+
+    width: 50%;
+
+    padding:
+        20px 40px;
+
+    margin-bottom: 50px;
+}
+
+
+.timeline-item:nth-child(odd) {
+
+    left: 0;
+
+    text-align: right;
+}
+
+
+.timeline-item:nth-child(even) {
+
+    left: 50%;
+
+    text-align: left;
+}
+
+
+/* ==================================================
+   TIMELINE DOT
+================================================== */
+
+.timeline-dot {
+
+    position: absolute;
+
+    top: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #160b12;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 18px;
+
+    z-index: 2;
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 255, 255, 0.15);
+}
+
+
+.timeline-item:nth-child(odd)
+.timeline-dot {
+
+    right: -22px;
+}
+
+
+.timeline-item:nth-child(even)
+.timeline-dot {
+
+    left: -22px;
+}
+
+
+/* ==================================================
+   TIMELINE CARD
+================================================== */
+
+.timeline-card {
+
+    padding: 28px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius: 15px;
+
+    backdrop-filter:
+        blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.timeline-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(255, 255, 255, 0.09);
+}
+
+
+.timeline-date {
+
+    display: block;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+    margin-bottom: 10px;
+}
+
+
+.timeline-card h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+
+.timeline-card p {
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    opacity: 0.75;
+}
+
+
+/* ==================================================
+   MEMORY PHOTOS
+================================================== */
+
+.memory-photo {
+
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.timeline-card:hover
+.memory-photo {
+
+    transform:
+        scale(1.02);
+}
+
+
+/* ==================================================
+   TWO PHOTO LAYOUT
+================================================== */
+
+.memory-two-photos {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+.memory-two-photos img {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.memory-two-photos img:hover {
+
+    transform:
+        scale(1.03);
+}
+
+
+/* ==================================================
+   MEMORY TEXT
+================================================== */
+
+.memory-info {
+
+    padding:
+        0 5px 5px;
+}
+
+
+.memory-info h2 {
+
+    margin-bottom: 12px;
+}
+
+
+/* ==================================================
+   MEMORY SCROLL REVEAL
+================================================== */
+
+.memory-reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(60px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+.memory-reveal.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ==================================================
+   LOVE BUTTON
+================================================== */
+
+#loveButton {
+
+    margin-top: 40px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==================================================
+   STORY ANIMATION
+================================================== */
+
+@keyframes storyAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* ==================================================
+   LOVE CARDS
+================================================== */
+
+#loveCardsScreen {
+
+    min-height: 100vh;
+
+    height: 100vh;
+
+    align-items: flex-start;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #3d1728,
+            #160b12 70%
+        );
+}
+
+
+.love-content {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding:
+        70px 25px 100px;
+
+    animation:
+        loveAppear 1.2s ease;
+}
+
+
+.love-content h1 {
+
+    font-size: 52px;
+
+    margin-bottom: 15px;
+}
+
+
+.love-intro {
+
+    max-width: 600px;
+
+    margin:
+        0 auto 55px;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    opacity: 0.75;
+}
+
+
+/* ==================================================
+   LOVE CARD GRID
+================================================== */
+
+.love-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   LOVE CARD
+================================================== */
+
+.love-card {
+
+    height: 270px;
+
+    perspective: 1000px;
+
+    cursor: pointer;
+}
+
+
+.love-card-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    transition:
+        transform 0.7s
+        cubic-bezier(
+            0.4,
+            0.2,
+            0.2,
+            1
+        );
+
+    transform-style:
+        preserve-3d;
+}
+
+
+.love-card.flipped
+.love-card-inner {
+
+    transform:
+        rotateY(180deg);
+}
+
+
+/* ==================================================
+   LOVE CARD FRONT + BACK
+================================================== */
+
+.love-card-front,
+.love-card-back {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 15px 50px
+        rgba(0, 0, 0, 0.3);
+}
+
+
+.love-card-back {
+
+    transform:
+        rotateY(180deg);
+
+    background:
+        rgba(255, 255, 255, 0.11);
+}
+
+
+/* ==================================================
+   LOVE CARD CONTENT
+================================================== */
+
+.card-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+.love-card h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+
+.love-card p {
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    opacity: 0.75;
+}
+
+
+.love-card-back p {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    opacity: 0.9;
+}
+
+
+/* ==================================================
+   LOVE CARD HOVER
+================================================== */
+
+.love-card:not(.flipped):hover {
+
+    transform:
+        translateY(-8px);
+}
+
+
+.love-card:not(.flipped):hover
+.love-card-front {
+
+    background:
+        rgba(255, 255, 255, 0.1);
+}
+
+
+/* ==================================================
+   CARD HINT
+================================================== */
+
+.card-hint {
+
+    margin-top: 35px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.45;
+}
+
+
+/* ==================================================
+   FUTURE BUTTON
+================================================== */
+
+#futureButton {
+
+    margin-top: 35px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==================================================
+   LOVE ANIMATION
+================================================== */
+
+@keyframes loveAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* ==================================================
+   DREAMY FUTURE SECTION
+================================================== */
+
+#futureScreen {
+
+    min-height: 100vh;
+
+    height: 100vh;
+
+    align-items: flex-start;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(116, 76, 160, 0.35),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(190, 92, 150, 0.25),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(75, 55, 130, 0.25),
+            transparent 40%
+        ),
+
+        #090712;
+
+    position: relative;
+}
+
+
+/* ==================================================
+   FUTURE CONTENT
+================================================== */
+
+.future-content {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding:
+        70px 25px 110px;
+
+    animation:
+        futureAppear 1.5s ease;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.future-content h1 {
+
+    font-size: 54px;
+
+    margin-bottom: 20px;
+
+    line-height: 1.15;
+}
+
+
+.future-intro {
+
+    max-width: 650px;
+
+    margin:
+        0 auto 60px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    opacity: 0.75;
+}
+
+
+/* ==================================================
+   FUTURE CARDS
+================================================== */
+
+.future-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+.future-card {
+
+    height: 280px;
+
+    perspective: 1200px;
+
+    cursor: pointer;
+}
+
+
+.future-card-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    transition:
+        transform 0.8s
+        cubic-bezier(
+            0.4,
+            0.2,
+            0.2,
+            1
+        );
+
+    transform-style:
+        preserve-3d;
+}
+
+
+.future-card.flipped
+.future-card-inner {
+
+    transform:
+        rotateY(180deg);
+}
+
+
+/* ==================================================
+   FUTURE CARD FRONT + BACK
+================================================== */
+
+.future-card-front,
+.future-card-back {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 35px;
+
+    border-radius: 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.13);
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 20px 70px
+        rgba(0, 0, 0, 0.45);
+
+    transition:
+        box-shadow 0.4s ease;
+}
+
+
+.future-card-front {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.035)
+        );
+}
+
+
+.future-card-back {
+
+    transform:
+        rotateY(180deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(140, 105, 190, 0.18),
+            rgba(255, 255, 255, 0.07)
+        );
+}
+
+
+/* ==================================================
+   FUTURE ICON
+================================================== */
+
+.future-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 18px;
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(255, 255, 255, 0.25)
+        );
+}
+
+
+/* ==================================================
+   FUTURE CARD TEXT
+================================================== */
+
+.future-card h2 {
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+
+.future-card p {
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    opacity: 0.75;
+}
+
+
+.future-card-back p {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    opacity: 0.92;
+
+    max-width: 350px;
+}
+
+
+/* ==================================================
+   FUTURE CARD HOVER
+================================================== */
+
+.future-card:not(.flipped):hover {
+
+    transform:
+        translateY(-8px);
+}
+
+
+.future-card:not(.flipped):hover
+.future-card-front {
+
+    box-shadow:
+        0 25px 80px
+        rgba(140, 100, 200, 0.18);
+}
+
+
+/* ==================================================
+   FUTURE HINT
+================================================== */
+
+.future-hint {
+
+    margin-top: 45px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.45;
+}
+
+
+/* ==================================================
+   FINAL REVEAL BUTTON
+================================================== */
+
+#finalRevealButton {
+
+    margin-top: 35px;
+
+    margin-bottom: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+        0 10px 40px
+        rgba(170, 120, 220, 0.18);
+}
+
+
+/* ==================================================
+   FUTURE ANIMATION
+================================================== */
+
+@keyframes futureAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.98);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* ==================================================
+   MAGICAL FINAL CONSTELLATION
+================================================== */
+
+#finalScreen {
+
+    min-height: 100vh;
+
+    height: 100vh;
+
+    position: relative;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    display: block;
+
+    background:
+
+        radial-gradient(
+            ellipse at center 38%,
+            #211442 0%,
+            #100b22 35%,
+            #070611 65%,
+            #020208 100%
+        );
+
+    color: white;
+}
+
+
+/* ==================================================
+   COSMIC GLOW
+================================================== */
+
+#finalScreen::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 700px;
+
+    height: 700px;
+
+    left: 50%;
+
+    top: 30%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(145, 100, 220, 0.16),
+            rgba(100, 70, 180, 0.06) 35%,
+            transparent 70%
+        );
+
+    filter:
+        blur(20px);
+
+    pointer-events: none;
+
+    animation:
+        cosmicPulse 6s
+        ease-in-out
+        infinite;
+
+    z-index: 0;
+}
+
+
+@keyframes cosmicPulse {
+
+    0%,
+    100% {
+
+        opacity: 0.45;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.9);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+    }
+
+}
+
+
+/* ==================================================
+   STAR FIELD
+================================================== */
+
+.star-field {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+
+.star {
+
+    position: absolute;
+
+    color: white;
+
+    opacity: 0;
+
+    animation:
+        starAppear 2s ease forwards,
+        starTwinkle 4s ease-in-out infinite;
+
+    text-shadow:
+
+        0 0 8px
+        rgba(255,255,255,0.8),
+
+        0 0 20px
+        rgba(180,150,255,0.6);
+}
+
+
+/* ==================================================
+   STAR POSITIONS
+================================================== */
+
+.star-1 {
+    top: 12%;
+    left: 12%;
+    font-size: 12px;
+    animation-delay: 0.3s;
+}
+
+.star-2 {
+    top: 22%;
+    left: 28%;
+    font-size: 18px;
+    animation-delay: 0.8s;
+}
+
+.star-3 {
+    top: 10%;
+    left: 52%;
+    font-size: 10px;
+    animation-delay: 1.2s;
+}
+
+.star-4 {
+    top: 18%;
+    left: 78%;
+    font-size: 15px;
+    animation-delay: 0.5s;
+}
+
+.star-5 {
+    top: 35%;
+    left: 8%;
+    font-size: 9px;
+    animation-delay: 1.5s;
+}
+
+.star-6 {
+    top: 42%;
+    left: 22%;
+    font-size: 14px;
+    animation-delay: 0.7s;
+}
+
+.star-7 {
+    top: 30%;
+    left: 90%;
+    font-size: 17px;
+    animation-delay: 1.8s;
+}
+
+.star-8 {
+    top: 58%;
+    left: 7%;
+    font-size: 9px;
+    animation-delay: 1s;
+}
+
+.star-9 {
+    top: 65%;
+    left: 88%;
+    font-size: 13px;
+    animation-delay: 2s;
+}
+
+.star-10 {
+    top: 78%;
+    left: 18%;
+    font-size: 16px;
+    animation-delay: 0.9s;
+}
+
+.star-11 {
+    top: 84%;
+    left: 45%;
+    font-size: 8px;
+    animation-delay: 1.6s;
+}
+
+.star-12 {
+    top: 72%;
+    left: 72%;
+    font-size: 15px;
+    animation-delay: 0.4s;
+}
+
+.star-13 {
+    top: 90%;
+    left: 82%;
+    font-size: 11px;
+    animation-delay: 1.3s;
+}
+
+.star-14 {
+    top: 52%;
+    left: 96%;
+    font-size: 8px;
+    animation-delay: 1.9s;
+}
+
+.star-15 {
+    top: 8%;
+    left: 92%;
+    font-size: 12px;
+    animation-delay: 0.6s;
+}
+
+
+/* ==================================================
+   STAR ANIMATIONS
+================================================== */
+
+@keyframes starAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0);
+    }
+
+    to {
+
+        opacity: 0.75;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+
+@keyframes starTwinkle {
+
+    0%,
+    100% {
+
+        opacity: 0.35;
+    }
+
+    50% {
+
+        opacity: 1;
+    }
+
+}
+
+
+/* ==================================================
+   CONSTELLATION
+================================================== */
+
+.constellation {
+
+    position: relative;
+
+    width: 400px;
+
+    height: 300px;
+
+    margin:
+        40px auto 0;
+
+    z-index: 1;
+
+    opacity: 0;
+
+    animation:
+        constellationAppear
+        2s ease forwards;
+
+    animation-delay:
+        1.5s;
+}
+
+
+/* ==================================================
+   CONSTELLATION STARS
+================================================== */
+
+.constellation-star {
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+
+        0 0 8px white,
+
+        0 0 20px
+        rgba(190,160,255,0.9),
+
+        0 0 35px
+        rgba(190,160,255,0.5);
+
+    opacity: 0;
+
+    animation:
+        constellationStarAppear
+        1s ease forwards;
+}
+
+
+/* ==================================================
+   HEART STAR POSITIONS
+================================================== */
+
+.c1 {
+    left: 95px;
+    top: 145px;
+    animation-delay: 2s;
+}
+
+.c2 {
+    left: 75px;
+    top: 105px;
+    animation-delay: 2.4s;
+}
+
+.c3 {
+    left: 100px;
+    top: 65px;
+    animation-delay: 2.8s;
+}
+
+.c4 {
+    left: 145px;
+    top: 55px;
+    animation-delay: 3.2s;
+}
+
+.c5 {
+    left: 200px;
+    top: 100px;
+    animation-delay: 3.6s;
+}
+
+.c6 {
+    left: 255px;
+    top: 55px;
+    animation-delay: 4s;
+}
+
+.c7 {
+    left: 300px;
+    top: 65px;
+    animation-delay: 4.4s;
+}
+
+.c8 {
+    left: 325px;
+    top: 105px;
+    animation-delay: 4.8s;
+}
+
+.c9 {
+    left: 305px;
+    top: 145px;
+    animation-delay: 5.2s;
+}
+
+
+/* ==================================================
+   CONSTELLATION STAR ANIMATION
+================================================== */
+
+@keyframes constellationStarAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0);
+
+        box-shadow:
+            0 0 0 transparent;
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.8);
+
+        box-shadow:
+
+            0 0 15px white,
+
+            0 0 35px
+            rgba(200,170,255,1);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+        box-shadow:
+
+            0 0 6px white,
+
+            0 0 15px white,
+
+            0 0 30px
+            rgba(190,160,255,0.8);
+    }
+
+}
+
+
+/* ==================================================
+   HEART LINES
+================================================== */
+
+.heart-lines {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: visible;
+
+    pointer-events: none;
+}
+
+
+.heart-lines path {
+
+    fill: none;
+
+    stroke:
+        rgba(255,255,255,0.55);
+
+    stroke-width: 1.2;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(200,170,255,0.8)
+        );
+
+    stroke-dasharray: 1000;
+
+    stroke-dashoffset: 1000;
+
+    animation:
+        drawHeart
+        6s
+        ease-in-out
+        forwards;
+
+    animation-delay: 2s;
+}
+
+
+@keyframes drawHeart {
+
+    to {
+
+        stroke-dashoffset: 0;
+    }
+
+}
+
+
+/* ==================================================
+   CONSTELLATION APPEAR
+================================================== */
+
+@keyframes constellationAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.85);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* ==================================================
+   FINAL MESSAGE
+================================================== */
+
+.final-message {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 760px;
+
+    margin:
+        -10px auto 0;
+
+    padding:
+        0 25px 100px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    animation:
+        finalMessageAppear
+        2s ease forwards;
+
+    animation-delay: 5.5s;
+}
+
+
+.final-message h1 {
+
+    font-size: 58px;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+
+        0 0 25px
+        rgba(200,170,255,0.35);
+}
+
+
+/* ==================================================
+   FINAL LETTER
+================================================== */
+
+.final-letter {
+
+    padding: 40px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,0.45);
+
+    text-align: left;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+}
+
+
+.final-letter p {
+
+    margin-bottom: 25px;
+}
+
+
+/* ==================================================
+   SPECIAL MESSAGE
+================================================== */
+
+.final-highlight {
+
+    text-align: center;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    margin:
+        40px 0 !important;
+
+    text-shadow:
+
+        0 0 20px
+        rgba(255,255,255,0.35),
+
+        0 0 40px
+        rgba(180,150,255,0.4);
+}
+
+
+/* ==================================================
+   FINAL ENDING
+================================================== */
+
+.final-ending {
+
+    text-align: center;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-top: 40px;
+}
+
+
+/* ==================================================
+   BIRTHDAY ENDING
+================================================== */
+
+.birthday-ending {
+
+    margin-top: 80px;
+
+    padding-bottom: 40px;
+
+    text-align: center;
+}
+
+
+.birthday-line {
+
+    width: 100px;
+
+    height: 1px;
+
+    margin:
+        0 auto 30px;
+
+    background:
+        rgba(255,255,255,0.4);
+
+    box-shadow:
+        0 0 12px
+        rgba(200,170,255,0.5);
+}
+
+
+.birthday-ending p {
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    opacity: 0.6;
+
+    margin-bottom: 12px;
+}
+
+
+.birthday-ending h2 {
+
+    font-size: 42px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+
+        0 0 25px
+        rgba(200,170,255,0.5),
+
+        0 0 50px
+        rgba(180,150,255,0.3);
+}
+
+
+.birthday-ending span {
+
+    font-size: 14px;
+
+    opacity: 0.5;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==================================================
+   FINAL MESSAGE ANIMATION
+================================================== */
+
+@keyframes finalMessageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE — GENERAL
+================================================== */
+
+@media (max-width: 600px) {
+
+    .screen {
+
+        padding:
+            25px 20px;
+    }
+
+
+    h1 {
+
+        font-size: 40px;
+    }
+
+
+    .message {
+
+        font-size: 18px;
+    }
+
+
+    .small-text {
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* ==============================================
+       ENVELOPE
+    ============================================== */
+
+    #envelopeScreen .message {
+
+        margin-bottom: 35px;
+    }
+
+
+    .envelope-container {
+
+        margin-top: 40px;
+
+        margin-bottom: 65px;
+    }
+
+
+    .envelope {
+
+        transform:
+            scale(0.85);
+    }
+
+
+    .envelope:hover {
+
+        transform:
+            scale(0.9);
+    }
+
+
+    /* ==============================================
+       LETTER
+    ============================================== */
+
+    .letter-content {
+
+        padding:
+            45px 15px 70px;
+    }
+
+
+    .letter-content h1 {
+
+        font-size: 36px;
+
+        line-height: 1.2;
+    }
+
+
+    .real-letter {
+
+        padding: 25px;
+
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    #memoriesButton {
+
+        margin-top: 25px;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* ==============================================
+       TIMELINE
+    ============================================== */
+
+    .story-content {
+
+        padding:
+            50px 18px 80px;
+    }
+
+
+    .story-content h1 {
+
+        font-size: 38px;
+    }
+
+
+    .story-intro {
+
+        font-size: 17px;
+
+        margin-bottom: 50px;
+    }
+
+
+    .timeline::before {
+
+        left: 20px;
+    }
+
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+
+        width: 100%;
+
+        left: 0;
+
+        text-align: left;
+
+        padding:
+            20px 10px 20px 60px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .timeline-item:nth-child(odd)
+    .timeline-dot,
+
+    .timeline-item:nth-child(even)
+    .timeline-dot {
+
+        left: -2px;
+
+        right: auto;
+    }
+
+
+    .timeline-card {
+
+        padding: 22px;
+    }
+
+
+    .timeline-card h2 {
+
+        font-size: 21px;
+    }
+
+
+    .timeline-card p {
+
+        font-size: 15px;
+    }
+
+
+    .memory-photo {
+
+        height: 220px;
+    }
+
+
+    .memory-two-photos {
+
+        gap: 7px;
+    }
+
+
+    .memory-two-photos img {
+
+        height: 150px;
+    }
+
+
+    /* ==============================================
+       LOVE CARDS
+    ============================================== */
+
+    .love-content {
+
+        padding:
+            50px 18px 80px;
+    }
+
+
+    .love-content h1 {
+
+        font-size: 38px;
+    }
+
+
+    .love-intro {
+
+        font-size: 17px;
+
+        margin-bottom: 40px;
+    }
+
+
+    .love-cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .love-card {
+
+        height: 240px;
+    }
+
+
+    .love-card-front,
+    .love-card-back {
+
+        padding: 20px;
+    }
+
+
+    .card-icon {
+
+        font-size: 35px;
+    }
+
+
+    .love-card h2 {
+
+        font-size: 18px;
+    }
+
+
+    .love-card p {
+
+        font-size: 13px;
+    }
+
+
+    .love-card-back p {
+
+        font-size: 14px;
+    }
+
+
+    /* ==============================================
+       FUTURE
+    ============================================== */
+
+    .future-content {
+
+        padding:
+            50px 18px 90px;
+    }
+
+
+    .future-content h1 {
+
+        font-size: 38px;
+    }
+
+
+    .future-intro {
+
+        font-size: 17px;
+
+        margin-bottom: 40px;
+    }
+
+
+    .future-cards {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .future-card {
+
+        height: 250px;
+    }
+
+
+    .future-card-front,
+    .future-card-back {
+
+        padding: 25px;
+    }
+
+
+    .future-icon {
+
+        font-size: 42px;
+    }
+
+
+    .future-card h2 {
+
+        font-size: 21px;
+    }
+
+
+    .future-card p {
+
+        font-size: 14px;
+    }
+
+
+    .future-card-back p {
+
+        font-size: 15px;
+    }
+
+
+    /* ==============================================
+       FINAL CONSTELLATION
+    ============================================== */
+
+    .constellation {
+
+        width: 320px;
+
+        height: 240px;
+
+        transform:
+            scale(0.8);
+
+        margin-top: 10px;
+    }
+
+
+    .final-message {
+
+        margin-top: -25px;
+
+        padding:
+            0 18px 70px;
+    }
+
+
+    .final-message h1 {
+
+        font-size: 40px;
+    }
+
+
+    .final-letter {
+
+        padding: 25px;
+
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    .final-highlight {
+
+        font-size: 27px;
+    }
+
+
+    .final-ending {
+
+        font-size: 21px;
+    }
+
+
+    .birthday-ending h2 {
+
+        font-size: 30px;
+    }
+
+}
+
+
+/* ==================================================
+   EXTRA SMALL PHONES
+================================================== */
+
+@media (max-width: 450px) {
+
+    .love-cards {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .love-card {
+
+        height: 230px;
+    }
+
+
+    .envelope {
+
+        transform:
+            scale(0.78);
+    }
+
+
+    .envelope:hover {
+
+        transform:
+            scale(0.82);
+    }
+
+}

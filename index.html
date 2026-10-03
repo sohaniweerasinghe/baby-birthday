@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Little Surprise For You ❤️</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+<audio
+    id="backgroundMusic"
+    src="music/nocturna-opera.mp3"
+    loop
+    preload="auto">
+</audio>
+
+    <!-- ==================================================
+         FIRST SCREEN
+    ================================================== -->
+
+    <div
+        class="screen"
+        id="welcomeScreen"
+    >
+
+        <div class="content">
+
+            <p class="small-text">
+                A little something for you...
+            </p>
+
+            <h1>
+                Hey, Baby ❤️
+            </h1>
+
+            <p class="message">
+                I made something for you.
+            </p>
+
+            <button id="startButton">
+                Click here
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         SECOND SCREEN
+    ================================================== -->
+
+    <div
+        class="screen hidden"
+        id="secondScreen"
+    >
+
+        <div class="content">
+
+            <p class="small-text">
+                Hmm... you actually clicked it 👀
+            </p>
+
+            <h1>
+                So you're curious?
+            </h1>
+
+            <p class="message">
+                Good. Because I have something to tell you...
+            </p>
+
+            <button id="continueButton">
+                Continue ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         ENVELOPE SCREEN
+    ================================================== -->
+
+    <div
+        class="screen hidden"
+        id="envelopeScreen"
+    >
+
+        <div class="content">
+
+            <p class="small-text">
+                A little something from me to you...
+            </p>
+
+            <h1>
+                There's a letter for you 💌
+            </h1>
+
+            <p
+                class="message"
+                id="envelopeInstruction"
+            >
+                But you'll have to open it yourself.
+            </p>
+
+
+            <!-- ENVELOPE -->
+
+            <div class="envelope-container">
+
+                <div
+                    class="envelope"
+                    id="envelope"
+                >
+
+                    <div class="envelope-back"></div>
+
+                    <div class="envelope-letter">
+                        ❤️
+                    </div>
+
+                    <div class="envelope-flap"></div>
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="open-text"
+                id="openText"
+            >
+                Click the envelope
+            </p>
+
+
+            <!-- READ LETTER BUTTON -->
+
+            <button
+                id="readLetterButton"
+                class="hidden letter-button"
+            >
+                Read my letter ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         BIRTHDAY LETTER SCREEN
+    ================================================== -->
+
+    <div
+        class="screen hidden"
+        id="letterScreen"
+    >
+
+        <div class="letter-content">
+
+            <p class="small-text">
+                From my heart to yours
+            </p>
+
+            <h1>
+                Happy Birthday, my love ❤️
+            </h1>
+
+
+            <!-- LETTER -->
+
+            <div class="real-letter">
+
+                <div id="letterText">
+
+                    <p>
+                        My love,
+                    </p>
+
+                    <p>
+                        This little surprise is something I made
+                        especially for you.
+                    </p>
+
+                    <p>
+                        There are so many things I want to tell you,
+                        and somehow putting them into words doesn't
+                        feel like enough.
+                    </p>
+
+                    <p>
+                        But today is your day, so I want you to know
+                        just how special you are to me.
+                    </p>
+
+                    <p>
+                        Happy Birthday. ❤️
+                    </p>
+
+                    <p class="signature">
+                        — Yours Always ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- THERE'S MORE BUTTON -->
+
+            <button
+                id="memoriesButton"
+                class="letter-button"
+            >
+                There's more... ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         STORY INTRO SCREEN
+    ================================================== -->
+
+    <div
+        class="screen hidden"
+        id="storyIntroScreen"
+    >
+
+        <div class="content">
+
+            <p class="small-text">
+                Before we go any further...
+            </p>
+
+            <h1>
+                But wait... ❤️
+            </h1>
+
+            <p class="message">
+
+                A birthday isn't just about today.
+
+                <br>
+                <br>
+
+                It's about all the little moments
+                that brought us here.
+
+            </p>
+
+            <button id="storyButton">
+                Let's go back to the beginning →
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         OUR STORY / MEMORY LANE
+    ================================================== -->
+
+    <div
+        class="screen hidden"
+        id="ourStoryScreen"
+    >
+
+        <div class="story-content">
+
+
+            <p class="small-text">
+                Our story
+            </p>
+
+
+            <h1>
+                How we got here ❤️
+            </h1>
+
+
+            <p class="story-intro">
+
+                Every relationship is made up of little moments.
+
+                <br>
+
+                These are some of mine.
+
+            </p>
+
+
+
+            <!-- ==================================================
+                 TIMELINE
+            ================================================== -->
+
+            <div class="timeline">
+
+
+                <!-- =========================
+                     MEMORY 01
+                ========================== -->
+
+                <div class="timeline-item memory-reveal">
+
+                    <div class="timeline-dot">
+                        ❤️
+                    </div>
+
+
+                    <div class="timeline-card">
+
+                        <img
+                            src="images/memory-01.jpg"
+                            alt="Our first memory"
+                            class="memory-photo"
+                        >
+
+
+                        <div class="memory-info">
+
+                            <span class="timeline-date">
+                                The Beginning
+                            </span>
+
+
+                            <h2>
+                                And then there was you.
+                            </h2>
+
+
+                            <p>
+                                This is where our story begins.
+                                One moment, one conversation,
+                                one little thing that somehow
+                                became something much bigger.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     MEMORY 02 — TWO PHOTOS
+                ========================== -->
+
+                <div class="timeline-item memory-reveal">
+
+                    <div class="timeline-dot">
+                        ✨
+                    </div>
+
+
+                    <div class="timeline-card">
+
+
+                        <div class="memory-two-photos">
+
+                            <img
+                                src="images/memory-02a.jpg"
+                                alt="A special memory"
+                            >
+
+                            <img
+                                src="images/memory-02b.jpg"
+                                alt="Another special memory"
+                            >
+
+                        </div>
+
+
+                        <div class="memory-info">
+
+                            <span class="timeline-date">
+                                A Little Later
+                            </span>
+
+
+                            <h2>
+                                The moments I started noticing...
+                            </h2>
+
+
+                            <p>
+                                There were little moments that
+                                made me smile without even realizing it.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     MEMORY 03
+                ========================== -->
+
+                <div class="timeline-item memory-reveal">
+
+                    <div class="timeline-dot">
+                        🥹
+                    </div>
+
+
+                    <div class="timeline-card">
+
+                        <img
+                            src="images/memory-03.jpg"
+                            alt="One of my favorite memories"
+                            class="memory-photo"
+                        >
+
+
+                        <div class="memory-info">
+
+                            <span class="timeline-date">
+                                One Of My Favorites
+                            </span>
+
+
+                            <h2>
+                                A memory I'll always keep.
+                            </h2>
+
+
+                            <p>
+                                Some moments don't look important
+                                when they happen. But somehow,
+                                they stay with you.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     MEMORY 04 — TWO PHOTOS
+                ========================== -->
+
+                <div class="timeline-item memory-reveal">
+
+                    <div class="timeline-dot">
+                        💕
+                    </div>
+
+
+                    <div class="timeline-card">
+
+
+                        <div class="memory-two-photos">
+
+                            <img
+                                src="images/memory-04a.jpg"
+                                alt="Us"
+                            >
+
+                            <img
+                                src="images/memory-04b.jpg"
+                                alt="Another memory of us"
+                            >
+
+                        </div>
+
+
+                        <div class="memory-info">
+
+                            <span class="timeline-date">
+                                Just Us
+                            </span>
+
+
+                            <h2>
+                                My favorite kind of chaos.
+                            </h2>
+
+
+                            <p>
+                                The silly moments, the random moments,
+                                the moments that probably wouldn't mean
+                                much to anyone else.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     MEMORY 05
+                ========================== -->
+
+                <div class="timeline-item memory-reveal">
+
+                    <div class="timeline-dot">
+                        ❤️
+                    </div>
+
+
+                    <div class="timeline-card">
+
+                        <img
+                            src="images/memory-05.jpg"
+                            alt="Us today"
+                            class="memory-photo"
+                        >
+
+
+                        <div class="memory-info">
+
+                            <span class="timeline-date">
+                                Today
+                            </span>
+
+
+                            <h2>
+                                And here we are.
+                            </h2>
+
+
+                            <p>
+                                Still making memories.
+                                Still choosing each other.
+                                And hopefully, just getting started.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- END TIMELINE -->
+
+
+            <!-- LOVE CARDS BUTTON -->
+
+            <button id="loveButton">
+                There's something else I want you to know ❤️
+            </button>
+
+
+        </div>
+        <!-- END STORY CONTENT -->
+
+
+    </div>
+    <!-- END OUR STORY SCREEN -->
+
+
+
+    <!-- ==================================================
+         LOVE CARDS SCREEN
+         
+         IMPORTANT:
+         This is OUTSIDE ourStoryScreen.
+    ================================================== -->
+
+    <div
+        class="screen hidden"
+        id="loveCardsScreen"
+    >
+
+        <div class="love-content">
+
+
+            <p class="small-text">
+                A little game for you
+            </p>
+
+
+            <h1>
+                Things I love about you ❤️
+            </h1>
+
+
+            <p class="love-intro">
+
+                There are a few things I could never fit into
+                just one letter...
+
+                <br>
+
+                So you'll have to discover them yourself. 👀
+
+            </p>
+
+
+
+            <!-- ==================================================
+                 LOVE CARDS
+            ================================================== -->
+
+            <div class="love-cards">
+
+
+                <!-- =========================
+                     CARD 01
+                ========================== -->
+
+                <div class="love-card">
+
+                    <div class="love-card-inner">
+
+
+                        <!-- FRONT -->
+
+                        <div class="love-card-front">
+
+                            <div class="card-icon">
+                                😌
+                            </div>
+
+                            <h2>
+                                Something about you
+                            </h2>
+
+                            <p>
+                                Tap me 👀
+                            </p>
+
+                        </div>
+
+
+                        <!-- BACK -->
+
+                        <div class="love-card-back">
+
+                            <div class="card-icon">
+                                ❤️
+                            </div>
+
+                            <p>
+                                It's the way you make me
+                                feel safe being completely myself.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     CARD 02
+                ========================== -->
+
+                <div class="love-card">
+
+                    <div class="love-card-inner">
+
+
+                        <!-- FRONT -->
+
+                        <div class="love-card-front">
+
+                            <div class="card-icon">
+                                😂
+                            </div>
+
+                            <h2>
+                                Your chaos
+                            </h2>
+
+                            <p>
+                                What could it be? 👀
+                            </p>
+
+                        </div>
+
+
+                        <!-- BACK -->
+
+                        <div class="love-card-back">
+
+                            <div class="card-icon">
+                                😂
+                            </div>
+
+                            <p>
+                                I genuinely love how you can
+                                make even the most random
+                                moments fun.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     CARD 03
+                ========================== -->
+
+                <div class="love-card">
+
+                    <div class="love-card-inner">
+
+
+                        <!-- FRONT -->
+
+                        <div class="love-card-front">
+
+                            <div class="card-icon">
+                                🥹
+                            </div>
+
+                            <h2>
+                                The little things
+                            </h2>
+
+                            <p>
+                                There's a secret here...
+                            </p>
+
+                        </div>
+
+
+                        <!-- BACK -->
+
+                        <div class="love-card-back">
+
+                            <div class="card-icon">
+                                🥹
+                            </div>
+
+                            <p>
+                                It's not always the big things.
+                                Sometimes it's the tiniest things
+                                you do that mean the most to me.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     CARD 04
+                ========================== -->
+
+                <div class="love-card">
+
+                    <div class="love-card-inner">
+
+
+                        <!-- FRONT -->
+
+                        <div class="love-card-front">
+
+                            <div class="card-icon">
+                                🎵
+                            </div>
+
+                            <h2>
+                                Your voice
+                            </h2>
+
+                            <p>
+                                Tap to reveal 🎵
+                            </p>
+
+                        </div>
+
+
+                        <!-- BACK -->
+
+                        <div class="love-card-back">
+
+                            <div class="card-icon">
+                                🎵
+                            </div>
+
+                            <p>
+                                There's something about hearing
+                                your voice that can instantly
+                                change my entire mood.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     CARD 05
+                ========================== -->
+
+                <div class="love-card">
+
+                    <div class="love-card-inner">
+
+
+                        <!-- FRONT -->
+
+                        <div class="love-card-front">
+
+                            <div class="card-icon">
+                                🫶
+                            </div>
+
+                            <h2>
+                                Us
+                            </h2>
+
+                            <p>
+                                One more secret...
+                            </p>
+
+                        </div>
+
+
+                        <!-- BACK -->
+
+                        <div class="love-card-back">
+
+                            <div class="card-icon">
+                                🫶
+                            </div>
+
+                            <p>
+                                I love the little world
+                                we've created together.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     CARD 06
+                ========================== -->
+
+                <div class="love-card">
+
+                    <div class="love-card-inner">
+
+
+                        <!-- FRONT -->
+
+                        <div class="love-card-front">
+
+                            <div class="card-icon">
+                                🔐
+                            </div>
+
+                            <h2>
+                                One last one...
+                            </h2>
+
+                            <p>
+                                This one's special 👀
+                            </p>
+
+                        </div>
+
+
+                        <!-- BACK -->
+
+                        <div class="love-card-back">
+
+                            <div class="card-icon">
+                                💖
+                            </div>
+
+                            <p>
+                                If I had to choose you all
+                                over again, I'd still choose you.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- END LOVE CARDS -->
+
+
+            <p class="card-hint">
+                Tap the cards to discover them all ✨
+            </p>
+
+
+            <!-- NEXT CHAPTER -->
+
+            <button id="futureButton">
+                There's one more thing... 🌎
+            </button>
+
+
+        </div>
+        <!-- END LOVE CONTENT -->
+
+
+    </div>
+    <!-- END LOVE CARDS SCREEN -->
+
+<!-- ==================================================
+     FUTURE SCREEN
+================================================== -->
+
+<div
+    class="screen hidden"
+    id="futureScreen"
+>
+
+    <div class="future-content">
+
+        <p class="small-text">
+            A little glimpse ahead...
+        </p>
+
+        <h1>
+            Maybe it's not just a dream. 🌌
+        </h1>
+
+        <p class="future-intro">
+
+            I don't know exactly what our future
+            will look like.
+
+            <br><br>
+
+            I don't know where we'll be,
+            what we'll be doing,
+            or what life will throw at us.
+
+            <br><br>
+
+            But I know who I want beside me
+            when we find out.
+
+        </p>
+
+
+        <!-- ==========================================
+             FUTURE CARDS
+        =========================================== -->
+
+        <div class="future-cards">
+
+
+            <!-- CARD 1 -->
+
+            <div class="future-card">
+
+                <div class="future-card-inner">
+
+
+                    <div class="future-card-front">
+
+                        <div class="future-icon">
+                            ✈️
+                        </div>
+
+                        <h2>
+                            Somewhere New
+                        </h2>
+
+                        <p>
+                            Tap to see...
+                        </p>
+
+                    </div>
+
+
+                    <div class="future-card-back">
+
+                        <div class="future-icon">
+                            🌎
+                        </div>
+
+                        <p>
+                            Maybe one day we'll wake up
+                            somewhere neither of us has
+                            ever called home before.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div class="future-card">
+
+                <div class="future-card-inner">
+
+
+                    <div class="future-card-front">
+
+                        <div class="future-icon">
+                            🏠
+                        </div>
+
+                        <h2>
+                            Our Little Place
+                        </h2>
+
+                        <p>
+                            There's something here...
+                        </p>
+
+                    </div>
+
+
+                    <div class="future-card-back">
+
+                        <div class="future-icon">
+                            🏡
+                        </div>
+
+                        <p>
+                            Maybe someday we'll have
+                            a little place that feels
+                            completely ours.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div class="future-card">
+
+                <div class="future-card-inner">
+
+
+                    <div class="future-card-front">
+
+                        <div class="future-icon">
+                            🌅
+                        </div>
+
+                        <h2>
+                            The Adventures
+                        </h2>
+
+                        <p>
+                            Imagine this...
+                        </p>
+
+                    </div>
+
+
+                    <div class="future-card-back">
+
+                        <div class="future-icon">
+                            🗺️
+                        </div>
+
+                        <p>
+                            New places, random trips,
+                            getting lost, taking terrible
+                            photos and making the best memories.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 4 -->
+
+            <div class="future-card">
+
+                <div class="future-card-inner">
+
+
+                    <div class="future-card-front">
+
+                        <div class="future-icon">
+                            🌙
+                        </div>
+
+                        <h2>
+                            The Ordinary Days
+                        </h2>
+
+                        <p>
+                            This one is different...
+                        </p>
+
+                    </div>
+
+
+                    <div class="future-card-back">
+
+                        <div class="future-icon">
+                            ❤️
+                        </div>
+
+                        <p>
+                            Maybe the ordinary days will
+                            become my favorite ones.
+                            Just you, me, and our little life.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- END FUTURE CARDS -->
+
+
+        <p class="future-hint">
+            There might be something waiting after these... ✨
+        </p>
+
+
+        <!-- NEXT BUTTON -->
+
+        <button id="finalRevealButton">
+            I have one last thing to tell you... 💫
+        </button>
+
+
+    </div>
+
+</div>
+<!-- END FUTURE SCREEN -->
+
+<!-- ==================================================
+     FINAL CONSTELLATION SCREEN
+================================================== -->
+
+<div
+    class="screen hidden"
+    id="finalScreen"
+>
+
+    <!-- STAR FIELD -->
+
+    <div class="star-field">
+
+        <span class="star star-1">✦</span>
+        <span class="star star-2">✧</span>
+        <span class="star star-3">·</span>
+        <span class="star star-4">✦</span>
+        <span class="star star-5">·</span>
+        <span class="star star-6">✧</span>
+        <span class="star star-7">✦</span>
+        <span class="star star-8">·</span>
+        <span class="star star-9">✧</span>
+        <span class="star star-10">✦</span>
+        <span class="star star-11">·</span>
+        <span class="star star-12">✦</span>
+        <span class="star star-13">✧</span>
+        <span class="star star-14">·</span>
+        <span class="star star-15">✦</span>
+
+    </div>
+
+
+    <!-- CONSTELLATION -->
+
+    <div class="constellation">
+
+        <!-- Star points -->
+
+        <span class="constellation-star c1"></span>
+        <span class="constellation-star c2"></span>
+        <span class="constellation-star c3"></span>
+        <span class="constellation-star c4"></span>
+        <span class="constellation-star c5"></span>
+        <span class="constellation-star c6"></span>
+        <span class="constellation-star c7"></span>
+        <span class="constellation-star c8"></span>
+        <span class="constellation-star c9"></span>
+
+
+        <!-- Lines forming the heart -->
+
+        <svg
+            class="heart-lines"
+            viewBox="0 0 400 300"
+            preserveAspectRatio="xMidYMid meet"
+        >
+
+            <path
+                d="
+                    M 200 245
+                    L 95 145
+                    L 75 105
+                    L 100 65
+                    L 145 55
+                    L 200 100
+                    L 255 55
+                    L 300 65
+                    L 325 105
+                    L 305 145
+                    Z
+                "
+            />
+
+        </svg>
+
+    </div>
+
+
+
+    <!-- FINAL MESSAGE -->
+
+    <div class="final-message">
+
+        <p class="small-text">
+            And now... the last thing
+        </p>
+
+
+        <h1>
+            My love... ❤️
+        </h1>
+
+
+        <div class="final-letter">
+
+            <p>
+                If you've made it all the way here,
+                then you've seen a little piece of
+                everything I've been trying to put
+                into words.
+            </p>
+
+
+            <p>
+                The memories.
+                The little things.
+                The reasons I love you.
+                And the future I find myself
+                imagining with you.
+            </p>
+
+
+            <p>
+                But there's something I want you
+                to remember more than anything.
+            </p>
+
+
+            <p class="final-highlight">
+                I would still choose you.
+            </p>
+
+
+            <p>
+                In the exciting days.
+                In the ordinary ones.
+                In the messy ones.
+                And in every version of the life
+                waiting for us.
+            </p>
+
+
+            <p>
+                I don't know exactly where life
+                will take us, my love.
+            </p>
+
+
+            <p>
+                But wherever it does,
+                I hope I get to look beside me
+                and find you there.
+            </p>
+
+
+            <p>
+                Because if this is only the beginning,
+                I can't wait to see everything
+                that's still waiting for us.
+            </p>
+
+
+            <p class="final-ending">
+                Happy Birthday, my love. ❤️
+            </p>
+
+
+            <p class="signature">
+                — Always yours ❤️
+            </p>
+
+        </div>
+
+
+        <!-- FINAL BIRTHDAY MESSAGE -->
+
+        <div class="birthday-ending">
+
+            <div class="birthday-line"></div>
+
+            <p>
+                HAPPY BIRTHDAY
+            </p>
+
+            <h2>
+                MY LOVE ❤️
+            </h2>
+
+            <span>
+                Here's to every chapter still waiting for us.
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+<!-- END FINAL SCREEN -->
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
